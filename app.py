@@ -1,65 +1,68 @@
 import streamlit as st
 import gspread
 import toml
-from oauth2client.service_account import ServiceAccountCredentials
-import pandas as pd
+from datetime import datetime
 
-# Load Google service account credentials from TOML
+# Load Google API credentials from creds.toml
 creds = toml.load("creds.toml")
 
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_dict(creds, scope)
-client = gspread.authorize(credentials)
+gc = gspread.service_account_from_dict(creds)
+sh = gc.open("LibraryBooks")
+worksheet = sh.sheet1
 
-# Streamlit App
-st.set_page_config(page_title="📚 Library Manager", page_icon="📖", layout="centered")
+# Helper Functions
+def get_books():
+    records = worksheet.get_all_records()
+    return records
+
+def add_book(title, author, genre, copies):
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    worksheet.append_row([title, author, genre, copies, now])
+
+def delete_book(title):
+    data = worksheet.get_all_values()
+    for i, row in enumerate(data):
+        if row and row[0].lower() == title.lower():
+            worksheet.delete_rows(i+1)
+            return True
+    return False
+
+# Streamlit UI
 st.title("📚 Library Management System")
-st.markdown("Manage your book collection using Google Sheets in real time!")
 
-# Input: Google Sheet name
-sheet_name = st.text_input("Enter your Google Sheet name", placeholder="LibraryBooks")
+menu = ["Add Book", "View Books", "Delete Book"]
+choice = st.sidebar.selectbox("Menu", menu)
 
-if sheet_name:
-    try:
-        sheet = client.open(sheet_name).sheet1
-        data = sheet.get_all_records()
-        df = pd.DataFrame(data)
+if choice == "Add Book":
+    st.subheader("➕ Add a New Book")
+    title = st.text_input("Book Title")
+    author = st.text_input("Author")
+    genre = st.text_input("Genre")
+    copies = st.number_input("Number of Copies", min_value=1, value=1)
 
-        st.subheader("📖 Current Book List")
-        if not df.empty:
-            st.dataframe(df)
+    if st.button("Add Book"):
+        if title and author and genre:
+            add_book(title, author, genre, copies)
+            st.success(f"✅ '{title}' added successfully!")
         else:
-            st.info("No books in the library yet.")
+            st.warning("⚠️ Please fill all fields!")
 
-        st.subheader("➕ Add a New Book")
-        col1, col2 = st.columns(2)
-        with col1:
-            title = st.text_input("Title")
-            author = st.text_input("Author")
-        with col2:
-            year = st.text_input("Year")
-            genre = st.text_input("Genre")
+elif choice == "View Books":
+    st.subheader("📖 View Book List")
+    books = get_books()
+    if books:
+        st.dataframe(books)
+    else:
+        st.info("No books available.")
 
-        if st.button("Add Book"):
-            if title and author and year and genre:
-                sheet.append_row([title, author, year, genre])
-                st.success(f"Book '{title}' added!")
-                st.experimental_rerun()
-            else:
-                st.warning("Please fill in all fields.")
+elif choice == "Delete Book":
+    st.subheader("❌ Delete a Book")
+    books = get_books()
+    book_titles = [book["title"] for book in books]
+    selected = st.selectbox("Select a Book Title", options=book_titles)
 
-        st.subheader("🗑️ Delete a Book")
-        book_titles = df["Title"].tolist() if not df.empty else []
-        book_to_delete = st.selectbox("Select book to delete", options=["--Select--"] + book_titles)
-
-        if st.button("Delete Book") and book_to_delete != "--Select--":
-            cell = sheet.find(book_to_delete)
-            if cell:
-                sheet.delete_rows(cell.row)
-                st.success(f"Book '{book_to_delete}' deleted!")
-                st.experimental_rerun()
-            else:
-                st.error("Book not found.")
-
-    except Exception as e:
-        st.error(f"Error: {str(e)}")
+    if st.button("Delete Book"):
+        if delete_book(selected):
+            st.success(f"✅ '{selected}' deleted successfully!")
+        else:
+            st.error("❌ Book not found.")
