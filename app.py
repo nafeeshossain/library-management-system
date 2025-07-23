@@ -1,116 +1,65 @@
 import streamlit as st
-import json
+import gspread
+import toml
+from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
 
-# ----- Book Class -----
-class Book:
-    def __init__(self, title, author, copies=1):
-        self.title = title
-        self.author = author
-        self.copies = copies
+# Load Google service account credentials from TOML
+creds = toml.load("creds.toml")
 
-    def to_dict(self):
-        return {"title": self.title, "author": self.author, "copies": self.copies}
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(creds, scope)
+client = gspread.authorize(credentials)
 
-    @staticmethod
-    def from_dict(data):
-        return Book(data["title"], data["author"], data["copies"])
-
-# ----- Library Class -----
-class Library:
-    def __init__(self):
-        self.books = []
-
-    def load_data(self, filename="library.json"):
-        try:
-            with open(filename, "r") as file:
-                data = json.load(file)
-                self.books = [Book.from_dict(b) for b in data]
-        except FileNotFoundError:
-            self.books = []
-
-    def save_data(self, filename="library.json"):
-        with open(filename, "w") as file:
-            json.dump([book.to_dict() for book in self.books], file, indent=4)
-
-    def add_book(self, title, author, copies=1):
-        for book in self.books:
-            if book.title.lower() == title.lower():
-                book.copies += copies
-                return f"Updated copies of '{title}'."
-        self.books.append(Book(title, author, copies))
-        return f"Added book '{title}'."
-
-    def view_books(self):
-        return [f"{i+1}. {b.title} by {b.author} - {b.copies} copy(ies)" for i, b in enumerate(self.books)]
-
-    def borrow_book(self, title):
-        for book in self.books:
-            if book.title.lower() == title.lower():
-                if book.copies > 0:
-                    book.copies -= 1
-                    return f"You borrowed '{title}'."
-                return f"'{title}' is not available now."
-        return f"'{title}' not found."
-
-    def return_book(self, title):
-        for book in self.books:
-            if book.title.lower() == title.lower():
-                book.copies += 1
-                return f"You returned '{title}'."
-        return self.add_book(title, "Unknown")
-
-    def remove_book(self, title):
-        for book in self.books:
-            if book.title.lower() == title.lower():
-                self.books.remove(book)
-                return f"Removed '{title}'."
-        return f"'{title}' not found."
-
-# ----- Streamlit UI -----
+# Streamlit App
+st.set_page_config(page_title="📚 Library Manager", page_icon="📖", layout="centered")
 st.title("📚 Library Management System")
-lib = Library()
-lib.load_data()
+st.markdown("Manage your book collection using Google Sheets in real time!")
 
-option = st.sidebar.selectbox("Select an option", ["View Books", "Add Book", "Borrow Book", "Return Book", "Remove Book"])
+# Input: Google Sheet name
+sheet_name = st.text_input("Enter your Google Sheet name", placeholder="LibraryBooks")
 
-if option == "View Books":
-    st.subheader("Available Books")
-    books = lib.view_books()
-    if books:
-        st.write("\n".join(books))
-    else:
-        st.info("No books in the library.")
+if sheet_name:
+    try:
+        sheet = client.open(sheet_name).sheet1
+        data = sheet.get_all_records()
+        df = pd.DataFrame(data)
 
-elif option == "Add Book":
-    st.subheader("Add a New Book")
-    title = st.text_input("Title")
-    author = st.text_input("Author")
-    copies = st.number_input("Copies", min_value=1, value=1)
-    if st.button("Add Book"):
-        result = lib.add_book(title, author, copies)
-        lib.save_data()
-        st.success(result)
+        st.subheader("📖 Current Book List")
+        if not df.empty:
+            st.dataframe(df)
+        else:
+            st.info("No books in the library yet.")
 
-elif option == "Borrow Book":
-    st.subheader("Borrow a Book")
-    title = st.text_input("Title of the book to borrow")
-    if st.button("Borrow"):
-        result = lib.borrow_book(title)
-        lib.save_data()
-        st.success(result)
+        st.subheader("➕ Add a New Book")
+        col1, col2 = st.columns(2)
+        with col1:
+            title = st.text_input("Title")
+            author = st.text_input("Author")
+        with col2:
+            year = st.text_input("Year")
+            genre = st.text_input("Genre")
 
-elif option == "Return Book":
-    st.subheader("Return a Book")
-    title = st.text_input("Title of the book to return")
-    if st.button("Return"):
-        result = lib.return_book(title)
-        lib.save_data()
-        st.success(result)
+        if st.button("Add Book"):
+            if title and author and year and genre:
+                sheet.append_row([title, author, year, genre])
+                st.success(f"Book '{title}' added!")
+                st.experimental_rerun()
+            else:
+                st.warning("Please fill in all fields.")
 
-elif option == "Remove Book":
-    st.subheader("Remove a Book")
-    title = st.text_input("Title of the book to remove")
-    if st.button("Remove"):
-        result = lib.remove_book(title)
-        lib.save_data()
-        st.success(result)
+        st.subheader("🗑️ Delete a Book")
+        book_titles = df["Title"].tolist() if not df.empty else []
+        book_to_delete = st.selectbox("Select book to delete", options=["--Select--"] + book_titles)
+
+        if st.button("Delete Book") and book_to_delete != "--Select--":
+            cell = sheet.find(book_to_delete)
+            if cell:
+                sheet.delete_rows(cell.row)
+                st.success(f"Book '{book_to_delete}' deleted!")
+                st.experimental_rerun()
+            else:
+                st.error("Book not found.")
+
+    except Exception as e:
+        st.error(f"Error: {str(e)}")
