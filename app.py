@@ -1,68 +1,71 @@
 import streamlit as st
 import gspread
 import toml
-from datetime import datetime
+import json
+import pandas as pd
+from oauth2client.service_account import ServiceAccountCredentials
 
-# Load Google API credentials from creds.toml
-creds = toml.load("creds.toml")
+# ------------------ Load credentials ------------------ #
+creds_data = toml.load("creds.toml")
+gcp_json = json.loads(creds_data["gcp_service_account"])
+sheet_name = creds_data["sheet_name"]
 
-gc = gspread.service_account_from_dict(creds)
-sh = gc.open("LibraryBooks")
-worksheet = sh.sheet1
+# ------------------ Connect to Google Sheet ------------------ #
+scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(gcp_json, scope)
+client = gspread.authorize(credentials)
+sheet = client.open(sheet_name).sheet1
 
-# Helper Functions
-def get_books():
-    records = worksheet.get_all_records()
-    return records
-
-def add_book(title, author, genre, copies):
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    worksheet.append_row([title, author, genre, copies, now])
-
-def delete_book(title):
-    data = worksheet.get_all_values()
-    for i, row in enumerate(data):
-        if row and row[0].lower() == title.lower():
-            worksheet.delete_rows(i+1)
-            return True
-    return False
-
-# Streamlit UI
+# ------------------ Streamlit UI ------------------ #
 st.title("📚 Library Management System")
 
-menu = ["Add Book", "View Books", "Delete Book"]
-choice = st.sidebar.selectbox("Menu", menu)
+menu = ["Add Book", "View All Books", "Delete Book"]
+choice = st.sidebar.selectbox("Select Action", menu)
 
+def get_books():
+    records = sheet.get_all_records()
+    return pd.DataFrame(records)
+
+def add_book(name, author, year):
+    sheet.append_row([name, author, str(year)])
+
+def delete_book(index):
+    sheet.delete_rows(index + 2)  # +2 because row 1 is header, and 1-based index
+
+# ------------------ Add Book ------------------ #
 if choice == "Add Book":
     st.subheader("➕ Add a New Book")
-    title = st.text_input("Book Title")
+    name = st.text_input("Book Name")
     author = st.text_input("Author")
-    genre = st.text_input("Genre")
-    copies = st.number_input("Number of Copies", min_value=1, value=1)
+    year = st.number_input("Year", min_value=1000, max_value=9999, step=1)
 
     if st.button("Add Book"):
-        if title and author and genre:
-            add_book(title, author, genre, copies)
-            st.success(f"✅ '{title}' added successfully!")
+        if name and author and year:
+            add_book(name, author, year)
+            st.success(f"✅ Book '{name}' added successfully.")
         else:
-            st.warning("⚠️ Please fill all fields!")
+            st.error("❌ Please fill all fields.")
 
-elif choice == "View Books":
-    st.subheader("📖 View Book List")
-    books = get_books()
-    if books:
-        st.dataframe(books)
+# ------------------ View All Books ------------------ #
+elif choice == "View All Books":
+    st.subheader("📖 Book List")
+    df = get_books()
+    if not df.empty:
+        st.dataframe(df)
     else:
-        st.info("No books available.")
+        st.info("Library is empty.")
 
+# ------------------ Delete Book ------------------ #
 elif choice == "Delete Book":
-    st.subheader("❌ Delete a Book")
-    books = get_books()
-    book_titles = [book["title"] for book in books]
-    selected = st.selectbox("Select a Book Title", options=book_titles)
+    st.subheader("❌ Delete Book")
+    df = get_books()
 
-    if st.button("Delete Book"):
-        if delete_book(selected):
-            st.success(f"✅ '{selected}' deleted successfully!")
-        else:
-            st.error("❌ Book not found.")
+    if df.empty:
+        st.info("No books to delete.")
+    else:
+        st.dataframe(df)
+        selected = st.number_input("Enter Book Index to Delete (starting from 0)", min_value=0, max_value=len(df)-1, step=1)
+        if st.button("Delete"):
+            book = df.iloc[selected]["Book Name"]
+            delete_book(selected)
+            st.success(f"✅ Book '{book}' deleted.")
