@@ -25,6 +25,13 @@ It supports two types of users — **Readers** and **Librarians** — and uses *
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="40" height="40"/>
 </div>
 
+## 📸 Screenshots (Demo)  
+
+<p align="center">
+  <img src="Screenshot.png" width="500"/>
+</p>
+
+---
 
 ## 🌟 Smart Recommendation Engine  
 
@@ -67,10 +74,6 @@ This makes the library experience **personalized and engaging**, just like moder
 
 ---
 
-## 📸 Screenshots (Demo)  
-_Add some screenshots or a GIF showing recommendations in action._  
-
----
 
 ## 🏗️ Installation & Setup  
 
