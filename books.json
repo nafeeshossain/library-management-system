@@ -1,0 +1,996 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "year": 1937,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/The%20Hobbit-L.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lord%20of%20the%20Rings-L.jpg"
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "year": 1949,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/1984-L.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "year": 1813,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/Pride%20and%20Prejudice-L.jpg"
+    },
+    {
+      "id": 5,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "year": 1960,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/To%20Kill%20a%20Mockingbird-L.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year": 1925,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/The%20Great%20Gatsby-L.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "year": 1851,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/Moby%20Dick-L.jpg"
+    },
+    {
+      "id": 8,
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "year": 1869,
+      "copies": 0,
+      "image": "https://covers.openlibrary.org/b/title/War%20and%20Peace-L.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "year": 1979,
+      "copies": 9,
+      "image": "https://covers.openlibrary.org/b/title/The%20Hitchhiker's%20Guide%20to%20the%20Galaxy-L.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "year": 1965,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Dune-L.jpg"
+    },
+    {
+      "id": 11,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "year": 1951,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Catcher%20in%20the%20Rye-L.jpg"
+    },
+    {
+      "id": 12,
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "year": 1890,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Picture%20of%20Dorian%20Gray-L.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "year": 1818,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/Frankenstein-L.jpg"
+    },
+    {
+      "id": 14,
+      "title": "The Chronicles of Narnia",
+      "author": "C.S. Lewis",
+      "year": 1950,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/The%20Chronicles%20of%20Narnia-L.jpg"
+    },
+    {
+      "id": 15,
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "year": 2006,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/The%20Road-L.jpg"
+    },
+    {
+      "id": 16,
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "year": 2011,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/The%20Martian-L.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "year": 1951,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Foundation-L.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "year": 1932,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Brave%20New%20World-L.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "year": 1984,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/Neuromancer-L.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "year": 1953,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/Fahrenheit%20451-L.jpg"
+    },
+    {
+      "id": 21,
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt",
+      "year": 1999,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/The%20Pragmatic%20Programmer-L.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "year": 2008,
+      "copies": 12,
+      "image": "https://covers.openlibrary.org/b/title/Clean%20Code-L.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Code Complete",
+      "author": "Steve McConnell",
+      "year": 1993,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/Code%20Complete-L.jpg"
+    },
+    {
+      "id": 24,
+      "title": "The Mythical Man-Month",
+      "author": "Frederick Brooks Jr.",
+      "year": 1975,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/The%20Mythical%20Man-Month-L.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "year": 2008,
+      "copies": 15,
+      "image": "https://covers.openlibrary.org/b/title/Cracking%20the%20Coding%20Interview-L.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Design Patterns",
+      "author": "Erich Gamma",
+      "year": 1994,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Design%20Patterns-L.jpg"
+    },
+    {
+      "id": 27,
+      "title": "The Lean Startup",
+      "author": "Eric Ries",
+      "year": 2011,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lean%20Startup-L.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Introduction to Algorithms",
+      "author": "Thomas H. Cormen",
+      "year": 1990,
+      "copies": 9,
+      "image": "https://covers.openlibrary.org/b/title/Introduction%20to%20Algorithms-L.jpg"
+    },
+    {
+      "id": 29,
+      "title": "The Art of Computer Programming, Vol. 1",
+      "author": "Donald E. Knuth",
+      "year": 1968,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/The%20Art%20of%20Computer%20Programming,%20Vol.%201-L.jpg"
+    },
+    {
+      "id": 30,
+      "title": "The Phoenix Project",
+      "author": "Gene Kim",
+      "year": 2013,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/The%20Phoenix%20Project-L.jpg"
+    },
+    {
+      "id": 31,
+      "title": "The Lord of the Rings: The Two Towers",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lord%20of%20the%20Rings:%20The%20Two%20Towers-L.jpg"
+    },
+    {
+      "id": 32,
+      "title": "The Lord of the Rings: The Return of the King",
+      "author": "J.R.R. Tolkien",
+      "year": 1955,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lord%20of%20the%20Rings:%20The%20Return%20of%20the%20King-L.jpg"
+    },
+    {
+      "id": 33,
+      "title": "The Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "year": 1977,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/The%20Silmarillion-L.jpg"
+    },
+    {
+      "id": 34,
+      "title": "Unfinished Tales of Numenor and Middle-earth",
+      "author": "J.R.R. Tolkien",
+      "year": 1980,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/Unfinished%20Tales%20of%20Numenor%20and%20Middle-earth-L.jpg"
+    },
+    {
+      "id": 35,
+      "title": "The Children of Hurin",
+      "author": "J.R.R. Tolkien",
+      "year": 2007,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/The%20Children%20of%20Hurin-L.jpg"
+    },
+    {
+      "id": 36,
+      "title": "A Tale of Two Cities",
+      "author": "Charles Dickens",
+      "year": 1859,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/A%20Tale%20of%20Two%20Cities-L.jpg"
+    },
+    {
+      "id": 37,
+      "title": "Great Expectations",
+      "author": "Charles Dickens",
+      "year": 1861,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Great%20Expectations-L.jpg"
+    },
+    {
+      "id": 38,
+      "title": "Oliver Twist",
+      "author": "Charles Dickens",
+      "year": 1838,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/Oliver%20Twist-L.jpg"
+    },
+    {
+      "id": 39,
+      "title": "A Christmas Carol",
+      "author": "Charles Dickens",
+      "year": 1843,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/A%20Christmas%20Carol-L.jpg"
+    },
+    {
+      "id": 40,
+      "title": "The Joy of Life",
+      "author": "Charles Dickens",
+      "year": 1845,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/The%20Joy%20of%20Life-L.jpg"
+    },
+    {
+      "id": 41,
+      "title": "The Old Man and the Sea",
+      "author": "Ernest Hemingway",
+      "year": 1952,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Old%20Man%20and%20the%20Sea-L.jpg"
+    },
+    {
+      "id": 42,
+      "title": "For Whom the Bell Tolls",
+      "author": "Ernest Hemingway",
+      "year": 1940,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/For%20Whom%20the%20Bell%20Tolls-L.jpg"
+    },
+    {
+      "id": 43,
+      "title": "The Sun Also Rises",
+      "author": "Ernest Hemingway",
+      "year": 1926,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/The%20Sun%20Also%20Rises-L.jpg"
+    },
+    {
+      "id": 44,
+      "title": "The Big Sleep",
+      "author": "Raymond Chandler",
+      "year": 1939,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Big%20Sleep-L.jpg"
+    },
+    {
+      "id": 45,
+      "title": "The Long Goodbye",
+      "author": "Raymond Chandler",
+      "year": 1953,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/The%20Long%20Goodbye-L.jpg"
+    },
+    {
+      "id": 46,
+      "title": "Don Quixote",
+      "author": "Miguel de Cervantes",
+      "year": 1605,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/Don%20Quixote-L.jpg"
+    },
+    {
+      "id": 47,
+      "title": "Ulysses",
+      "author": "James Joyce",
+      "year": 1922,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/Ulysses-L.jpg"
+    },
+    {
+      "id": 48,
+      "title": "The Odyssey",
+      "author": "Homer",
+      "year": -800,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/The%20Odyssey-L.jpg"
+    },
+    {
+      "id": 49,
+      "title": "The Illiad",
+      "author": "Homer",
+      "year": -750,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/The%20Iliad-L.jpg"
+    },
+    {
+      "id": 50,
+      "title": "The Divine Comedy",
+      "author": "Dante Alighieri",
+      "year": 1320,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Divine%20Comedy-L.jpg"
+    },
+    {
+      "id": 51,
+      "title": "Introduction to Algorithms, 4th ed.",
+      "author": "Thomas H. Cormen",
+      "year": 2022,
+      "copies": 12,
+      "image": "https://covers.openlibrary.org/b/title/Introduction%20to%20Algorithms%204th%20edition-L.jpg"
+    },
+    {
+      "id": 52,
+      "title": "Algorithms",
+      "author": "Robert Sedgewick",
+      "year": 2011,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/Algorithms-L.jpg"
+    },
+    {
+      "id": 53,
+      "title": "The Art of Computer Programming, Vol. 2",
+      "author": "Donald E. Knuth",
+      "year": 1969,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Art%20of%20Computer%20Programming,%20Vol.%202-L.jpg"
+    },
+    {
+      "id": 54,
+      "title": "Operating System Concepts",
+      "author": "Abraham Silberschatz",
+      "year": 1983,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/Operating%20System%20Concepts-L.jpg"
+    },
+    {
+      "id": 55,
+      "title": "Computer Networking: A Top-Down Approach",
+      "author": "James F. Kurose",
+      "year": 2000,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/Computer%20Networking:%20A%20Top-Down%20Approach-L.jpg"
+    },
+    {
+      "id": 56,
+      "title": "Compilers: Principles, Techniques, & Tools",
+      "author": "Alfred V. Aho",
+      "year": 1986,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Compilers:%20Principles,%20Techniques,%20&%20Tools-L.jpg"
+    },
+    {
+      "id": 57,
+      "title": "Structure and Interpretation of Computer Programs",
+      "author": "Harold Abelson",
+      "year": 1984,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Structure%20and%20Interpretation%20of%20Computer%20Programs-L.jpg"
+    },
+    {
+      "id": 58,
+      "title": "The Elements of Statistical Learning",
+      "author": "Trevor Hastie",
+      "year": 2001,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/The%20Elements%20of%20Statistical%20Learning-L.jpg"
+    },
+    {
+      "id": 59,
+      "title": "Deep Learning",
+      "author": "Ian Goodfellow",
+      "year": 2016,
+      "copies": 9,
+      "image": "https://covers.openlibrary.org/b/title/Deep%20Learning-L.jpg"
+    },
+    {
+      "id": 60,
+      "title": "Grokking Algorithms",
+      "author": "Aditya Bhargava",
+      "year": 2016,
+      "copies": 11,
+      "image": "https://covers.openlibrary.org/b/title/Grokking%20Algorithms-L.jpg"
+    },
+    {
+      "id": 61,
+      "title": "Eloquent JavaScript",
+      "author": "Marijn Haverbeke",
+      "year": 2011,
+      "copies": 15,
+      "image": "https://covers.openlibrary.org/b/title/Eloquent%20JavaScript-L.jpg"
+    },
+    {
+      "id": 62,
+      "title": "You Don't Know JS",
+      "author": "Kyle Simpson",
+      "year": 2014,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/You%20Don't%20Know%20JS-L.jpg"
+    },
+    {
+      "id": 63,
+      "title": "A Smarter Way to Learn JavaScript",
+      "author": "Mark Myers",
+      "year": 2014,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/A%20Smarter%20Way%20to%20Learn%20JavaScript-L.jpg"
+    },
+    {
+      "id": 64,
+      "title": "JavaScript: The Good Parts",
+      "author": "Douglas Crockford",
+      "year": 2008,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/JavaScript:%20The%20Good%20Parts-L.jpg"
+    },
+    {
+      "id": 65,
+      "title": "Speaking JavaScript",
+      "author": "Axel Rauschmayer",
+      "year": 2014,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/Speaking%20JavaScript-L.jpg"
+    },
+    {
+      "id": 66,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lord%20of%20the%20Rings-L.jpg"
+    },
+    {
+      "id": 67,
+      "title": "The Unfinished Tales",
+      "author": "J.R.R. Tolkien",
+      "year": 1980,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/Unfinished%20Tales%20of%20Númenor%20and%20Middle-earth-L.jpg"
+    },
+    {
+      "id": 68,
+      "title": "The Children of Húrin",
+      "author": "J.R.R. Tolkien",
+      "year": 2007,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/The%20Children%20of%20Hurin-L.jpg"
+    },
+    {
+      "id": 69,
+      "title": "The Book of Lost Tales",
+      "author": "J.R.R. Tolkien",
+      "year": 1983,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/The%20Book%20of%20Lost%20Tales-L.jpg"
+    },
+    {
+      "id": 70,
+      "title": "Siddhartha",
+      "author": "Herman Hesse",
+      "year": 1922,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Siddhartha-L.jpg"
+    },
+    {
+      "id": 71,
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel García Márquez",
+      "year": 1967,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/One%20Hundred%20Years%20of%20Solitude-L.jpg"
+    },
+    {
+      "id": 72,
+      "title": "Love in the Time of Cholera",
+      "author": "Gabriel García Márquez",
+      "year": 1985,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Love%20in%20the%20Time%20of%20Cholera-L.jpg"
+    },
+    {
+      "id": 73,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "year": 1988,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/The%20Alchemist-L.jpg"
+    },
+    {
+      "id": 74,
+      "title": "The Little Prince",
+      "author": "Antoine de Saint-Exupéry",
+      "year": 1943,
+      "copies": 9,
+      "image": "https://covers.openlibrary.org/b/title/The%20Little%20Prince-L.jpg"
+    },
+    {
+      "id": 75,
+      "title": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "year": 2011,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/Sapiens:%20A%20Brief%20History%20of%20Humankind-L.jpg"
+    },
+    {
+      "id": 76,
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "year": 1988,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/A%20Brief%20History%20of%20Time-L.jpg"
+    },
+    {
+      "id": 77,
+      "title": "Cosmos",
+      "author": "Carl Sagan",
+      "year": 1980,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Cosmos-L.jpg"
+    },
+    {
+      "id": 78,
+      "title": "The God Delusion",
+      "author": "Richard Dawkins",
+      "year": 2006,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20God%20Delusion-L.jpg"
+    },
+    {
+      "id": 79,
+      "title": "Thinking, Fast and Slow",
+      "author": "Daniel Kahneman",
+      "year": 2011,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/Thinking,%20Fast%20and%20Slow-L.jpg"
+    },
+    {
+      "id": 80,
+      "title": "The Selfish Gene",
+      "author": "Richard Dawkins",
+      "year": 1976,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/The%20Selfish%20Gene-L.jpg"
+    },
+    {
+      "id": 81,
+      "title": "Dune Messiah",
+      "author": "Frank Herbert",
+      "year": 1969,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Dune%20Messiah-L.jpg"
+    },
+    {
+      "id": 82,
+      "title": "Children of Dune",
+      "author": "Frank Herbert",
+      "year": 1976,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/Children%20of%20Dune-L.jpg"
+    },
+    {
+      "id": 83,
+      "title": "God Emperor of Dune",
+      "author": "Frank Herbert",
+      "year": 1981,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/God%20Emperor%20of%20Dune-L.jpg"
+    },
+    {
+      "id": 84,
+      "title": "Heretics of Dune",
+      "author": "Frank Herbert",
+      "year": 1984,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/Heretics%20of%20Dune-L.jpg"
+    },
+    {
+      "id": 85,
+      "title": "Chapterhouse: Dune",
+      "author": "Frank Herbert",
+      "year": 1985,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/Chapterhouse:%20Dune-L.jpg"
+    },
+    {
+      "id": 86,
+      "title": "The Stand",
+      "author": "Stephen King",
+      "year": 1978,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/The%20Stand-L.jpg"
+    },
+    {
+      "id": 87,
+      "title": "It",
+      "author": "Stephen King",
+      "year": 1986,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/It-L.jpg"
+    },
+    {
+      "id": 88,
+      "title": "The Shining",
+      "author": "Stephen King",
+      "year": 1977,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/The%20Shining-L.jpg"
+    },
+    {
+      "id": 89,
+      "title": "Carrie",
+      "author": "Stephen King",
+      "year": 1974,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/Carrie-L.jpg"
+    },
+    {
+      "id": 90,
+      "title": "The Green Mile",
+      "author": "Stephen King",
+      "year": 1996,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/The%20Green%20Mile-L.jpg"
+    },
+    {
+      "id": 91,
+      "title": "Introduction to Robotics: Mechanics and Control",
+      "author": "John J. Craig",
+      "year": 1986,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/Introduction%20to%20Robotics:%20Mechanics%20and%20Control-L.jpg"
+    },
+    {
+      "id": 92,
+      "title": "Modern Control Engineering",
+      "author": "Katsuhiko Ogata",
+      "year": 1970,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Modern%20Control%20Engineering-L.jpg"
+    },
+    {
+      "id": 93,
+      "title": "Principles of Geotechnical Engineering",
+      "author": "Braja M. Das",
+      "year": 1985,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/Principles%20of%20Geotechnical%20Engineering-L.jpg"
+    },
+    {
+      "id": 94,
+      "title": "Fundamentals of Electric Circuits",
+      "author": "Charles K. Alexander",
+      "year": 2000,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/Fundamentals%20of%20Electric%20Circuits-L.jpg"
+    },
+    {
+      "id": 95,
+      "title": "Thermodynamics: An Engineering Approach",
+      "author": "Yunus A. Çengel",
+      "year": 1997,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/Thermodynamics:%20An%20Engineering%20Approach-L.jpg"
+    },
+    {
+      "id": 96,
+      "title": "A Smarter Way to Learn HTML & CSS",
+      "author": "Mark Myers",
+      "year": 2014,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/A%20Smarter%20Way%20to%20Learn%20HTML%20&%20CSS-L.jpg"
+    },
+    {
+      "id": 97,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lord%20of%20the%20Rings-L.jpg"
+    },
+    {
+      "id": 98,
+      "title": "The Art of Computer Programming, Vol. 3",
+      "author": "Donald E. Knuth",
+      "year": 1973,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/The%20Art%20of%20Computer%20Programming,%20Vol.%203-L.jpg"
+    },
+    {
+      "id": 99,
+      "title": "The Art of Computer Programming, Vol. 4A",
+      "author": "Donald E. Knuth",
+      "year": 2011,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Art%20of%20Computer%20Programming,%20Vol.%204A-L.jpg"
+    },
+    {
+      "id": 100,
+      "title": "Siddhartha: The Journey to the East",
+      "author": "Herman Hesse",
+      "year": 1922,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Siddhartha-L.jpg"
+    },
+    {
+      "id": 101,
+      "title": "Brave New World Revisited",
+      "author": "Aldous Huxley",
+      "year": 1958,
+      "copies": 2,
+      "image": "https://covers.openlibrary.org/b/title/Brave%20New%20World%20Revisited-L.jpg"
+    },
+    {
+      "id": 102,
+      "title": "The Doors of Perception",
+      "author": "Aldous Huxley",
+      "year": 1954,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Doors%20of%20Perception-L.jpg"
+    },
+    {
+      "id": 103,
+      "title": "The Art of Computer Programming, Vol. 4B",
+      "author": "Donald E. Knuth",
+      "year": 2022,
+      "copies": 1,
+      "image": "https://covers.openlibrary.org/b/title/The%20Art%20of%20Computer%20Programming,%20Vol.%204B-L.jpg"
+    },
+    {
+      "id": 104,
+      "title": "Calculus: Early Transcendentals",
+      "author": "James Stewart",
+      "year": 1999,
+      "copies": 10,
+      "image": "https://covers.openlibrary.org/b/title/Calculus:%20Early%20Transcendentals-L.jpg"
+    },
+    {
+      "id": 105,
+      "title": "Linear Algebra and Its Applications",
+      "author": "David C. Lay",
+      "year": 1993,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/Linear%20Algebra%20and%20Its%20Applications-L.jpg"
+    },
+    {
+      "id": 106,
+      "title": "Python Crash Course",
+      "author": "Eric Matthes",
+      "year": 2015,
+      "copies": 15,
+      "image": "https://covers.openlibrary.org/b/title/Python%20Crash%20Course-L.jpg"
+    },
+    {
+      "id": 107,
+      "title": "Automate the Boring Stuff with Python",
+      "author": "Al Sweigart",
+      "year": 2015,
+      "copies": 12,
+      "image": "https://covers.openlibrary.org/b/title/Automate%20the%20Boring%20Stuff%20with%20Python-L.jpg"
+    },
+    {
+      "id": 108,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "year": 1954,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/The%20Lord%20of%20the%20Rings-L.jpg"
+    },
+    {
+      "id": 109,
+      "title": "The Design of Everyday Things",
+      "author": "Donald A. Norman",
+      "year": 1988,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/The%20Design%20of%20Everyday%20Things-L.jpg"
+    },
+    {
+      "id": 110,
+      "title": "JavaScript and JQuery: Interactive Front-End Web Development",
+      "author": "Jon Duckett",
+      "year": 2014,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/JavaScript%20and%20JQuery-L.jpg"
+    },
+    {
+      "id": 111,
+      "title": "HTML and CSS: Design and Build Websites",
+      "author": "Jon Duckett",
+      "year": 2011,
+      "copies": 7,
+      "image": "https://covers.openlibrary.org/b/title/HTML%20and%20CSS-L.jpg"
+    },
+    {
+      "id": 112,
+      "title": "Head First Java",
+      "author": "Kathy Sierra",
+      "year": 2003,
+      "copies": 11,
+      "image": "https://covers.openlibrary.org/b/title/Head%20First%20Java-L.jpg"
+    },
+    {
+      "id": 113,
+      "title": "Java: A Beginner's Guide",
+      "author": "Herbert Schildt",
+      "year": 2001,
+      "copies": 9,
+      "image": "https://covers.openlibrary.org/b/title/Java:%20A%20Beginner's%20Guide-L.jpg"
+    },
+    {
+      "id": 114,
+      "title": "Learn Python the Hard Way",
+      "author": "Zed A. Shaw",
+      "year": 2010,
+      "copies": 5,
+      "image": "https://covers.openlibrary.org/b/title/Learn%20Python%20the%20Hard%20Way-L.jpg"
+    },
+    {
+      "id": 115,
+      "title": "Programming Rust",
+      "author": "Jim Blandy",
+      "year": 2017,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/Programming%20Rust-L.jpg"
+    },
+    {
+      "id": 116,
+      "title": "Go Programming Language",
+      "author": "Alan A. A. Donovan",
+      "year": 2015,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/The%20Go%20Programming%20Language-L.jpg"
+    },
+    {
+      "id": 117,
+      "title": "Effective Java",
+      "author": "Joshua Bloch",
+      "year": 2001,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/Effective%20Java-L.jpg"
+    },
+    {
+      "id": 118,
+      "title": "The Art of Computer Programming, Vol. 4",
+      "author": "Donald E. Knuth",
+      "year": 2022,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/The%20Art%20of%20Computer%20Programming,%20Vol.%204-L.jpg"
+    },
+    {
+      "id": 119,
+      "title": "Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "year": 1979,
+      "copies": 6,
+      "image": "https://covers.openlibrary.org/b/title/The%20Hitchhiker's%20Guide%20to%20the%20Galaxy-L.jpg"
+    },
+    {
+      "id": 120,
+      "title": "A Smarter Way to Learn Python",
+      "author": "Mark Myers",
+      "year": 2016,
+      "copies": 9,
+      "image": "https://covers.openlibrary.org/b/title/A%20Smarter%20Way%20to%20Learn%20Python-L.jpg"
+    },
+    {
+      "id": 121,
+      "title": "The Road to Serfdom",
+      "author": "F. A. Hayek",
+      "year": 1944,
+      "copies": 4,
+      "image": "https://covers.openlibrary.org/b/title/The%20Road%20to%20Serfdom-L.jpg"
+    },
+    {
+      "id": 122,
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "year": 1945,
+      "copies": 12,
+      "image": "https://covers.openlibrary.org/b/title/Animal%20Farm-L.jpg"
+    },
+    {
+      "id": 123,
+      "title": "Homage to Catalonia",
+      "author": "George Orwell",
+      "year": 1938,
+      "copies": 3,
+      "image": "https://covers.openlibrary.org/b/title/Homage%20to%20Catalonia-L.jpg"
+    },
+    {
+      "id": 124,
+      "title": "Nineteen Eighty-Four",
+      "author": "George Orwell",
+      "year": 1949,
+      "copies": 8,
+      "image": "https://covers.openlibrary.org/b/title/Nineteen%20Eighty-Four-L.jpg"
+    }
+  ]
+}

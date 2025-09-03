@@ -1,0 +1,12 @@
+{
+  "name": "libra",
+  "version": "1.0.0",
+  "description": "A simple Node.js server for a library management system.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

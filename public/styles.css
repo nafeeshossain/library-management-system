@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+:root {
+    --primary-color: #5D5FEF;
+    --secondary-color: #2D2D2D;
+    --accent-color: #FF5D5D;
+    --background-color: #F7F8FC;
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --light-gray: #E0E0E0;
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --border-radius: 15px;
+    --transition: all 0.3s ease;
+}
+
+/* Base */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem; /* smaller padding */
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    align-items: center;    /* center horizontally */
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column; /* stack name and logo */
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem; /* slightly smaller */
+    text-transform: uppercase;
+}
+
+.logo-container img {
+    height: 40px; /* smaller logo */
+    width: 40px;
+    margin-top: 0.5rem; /* space below title */
+}
+
+
+/* Buttons */
+button, #logout-btn {
+    border: none;
+    padding: 0.9rem 1.8rem;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#logout-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+#logout-btn:hover {
+    background-color: #E64E4E;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+main {
+    padding: 3rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 3rem;
+    animation: fadeIn 0.6s ease;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* Auth Forms */
+.auth-forms {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.auth-forms form {
+    flex: 1;
+    max-width: 420px;
+    background-color: #fcfcfc;
+    padding: 2.2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.auth-forms form:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(93, 95, 239, 0.2);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.05rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #4C50DB;
+    transform: translateY(-2px);
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.book-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.book-card h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.book-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.book-card button {
+    margin-top: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.book-card button:hover {
+    background-color: #4C50DB;
+}
+
+.book-card button:disabled {
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
+    cursor: not-allowed;
+}
+
+/* Librarian Buttons */
+.librarian-actions button {
+    margin-top: 0.7rem;
+    background-color: var(--secondary-color);
+    font-size: 0.85rem;
+    padding: 0.5rem;
+}
+
+.librarian-actions button:hover {
+    background-color: #4A4A4A;
+}
+
+/* Search Bar */
+.book-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.book-search input {
+    flex: 1;
+    padding: 0.9rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+}
+
+.book-search button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+}
+
+.book-search button:hover {
+    background-color: #4C50DB;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideUp 0.4s ease;
+}
+
+.close-btn {
+    color: #999;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+}
+
+.team-credits p {
+    margin: 0.5rem 0;
+}
+
+.team-credits b {
+    color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(40px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .auth-forms {
+        flex-direction: column;
+        align-items: center;
+    }
+    .book-search {
+        flex-direction: column;
+    }
+}

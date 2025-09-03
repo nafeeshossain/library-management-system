@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": 1756906822255,
+      "name": "dhriti",
+      "email": "d@d.com",
+      "password": "123",
+      "role": "reader"
+    }
+  ],
+  "borrowedBooks": {}
+}
